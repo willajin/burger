@@ -72,4 +72,5 @@ var orm = {
     }
 };
 
+// export orm to burger.js
 module.exports = orm;
