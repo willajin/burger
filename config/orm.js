@@ -1,3 +1,4 @@
+// import connection.js
 var connection = require("./connection.js");
 
 // helper function to generate mySQL syntax
