@@ -19,8 +19,8 @@ router.get("/", function(req, res) {
 
 // POST route to add burger
 router.post("/api/burgers", function(req, res) {
-    burgers.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
-        res.json({ id: result.insertId} );
+    burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
+        res.json({ id: result.insertId});
     });
 });
 
@@ -29,7 +29,7 @@ router.put("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
     console.log("condition", condition);
 
-    burgers.updateOne({ devoured: req.body.devoured }, condition, function(result) {
+    burger.updateOne({ devoured: req.body.devoured }, condition, function(result) {
         if (result.changedRows === 0) {
             // if no rows changed, then ID does not exist (404)
             return res.status(404).end();

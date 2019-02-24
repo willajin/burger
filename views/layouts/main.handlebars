@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eat-Da-Burger</title>
+
+    <!-- Link jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Link Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- Link Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -13,7 +20,31 @@
     <link rel="stylesheet" href="../../public/assets/css/style.css" media="screen,projection" />
 
 </head>
+
 <body>
     {{{ body }}}
+
+    <script type="text/javascript">
+        // on click event to add new burger
+        $(".add-form").on("submit", function (event) {
+            event.preventDefault();
+
+            var newBurger = {
+                burger_name: $("#newBurger").val().trim(),
+                devoured: 0
+            };
+
+            // send ajax POST request
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(function () {
+                console.log("Added a new burger.");
+                // reload page for updates
+                location.reload();
+            });
+        });
+    </script>
 </body>
+
 </html>
