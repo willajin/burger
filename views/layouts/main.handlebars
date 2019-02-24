@@ -64,6 +64,22 @@
                 location.reload();
             });
         });
+
+        // on click event to delete burger
+        $(".deleteButton").on("click", function(event) {
+            event.preventDefault();
+
+            var id = $(this).data("id");
+
+            // send ajax DELETE request
+            $.ajax("/api/burgers/" + id, {
+                type: "DELETE"
+            }).then(function() {
+                console.log("Burger is deleted.");
+                // reload page for updates
+                location.reload();
+            });
+        });
     </script>
 </body>
 
