@@ -8,7 +8,8 @@
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
-                <li class="burgerList">{{this.id}} : {{this.burger_name}}</li>
+                <li class="burgerList"></li>{{this.id}} : {{this.burger_name}}</li>
+                <button type="button" class="devourButton btn waves-effect waves-light grey" id="devourBtn" data-id="{{this.id}}" data-devoured="{{devour}}">Devour</button> 
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -20,6 +21,7 @@
                 {{#each burgers}}
                 {{#if devoured}}
                 <li class="burgerList">{{this.id}} : {{ this.burger_name}}</li>
+                <button type="button" class="deleteButton btn waves-effect waves-light grey" id="deleteBtn" data-id="{{this.id}}" data-devoured="{{devour}}">Delete</button> 
                 {{/if}}
                 {{/each}}
             </ul>

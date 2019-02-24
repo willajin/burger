@@ -44,6 +44,26 @@
                 location.reload();
             });
         });
+
+        // on click event to devour burger (update)
+        $(".devourButton").on("click", function(event) {
+            event.preventDefault();
+
+            var id = $(this).data("id");
+            var newDevourState = {
+                devoured: 1
+            };
+
+            // send ajax PUT request
+            $.ajax("/api/burgers/" + id, {
+                type: "PUT",
+                data: newDevourState
+            }).then(function() {
+                console.log("Burger is devoured.");
+                // reload page for updates
+                location.reload();
+            });
+        });
     </script>
 </body>
 
