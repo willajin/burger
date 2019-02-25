@@ -9,7 +9,7 @@
                 {{#each burgers}}
                 {{#unless devoured}}
                 <li class="burgerList"></li>{{this.id}} : {{this.burger_name}}
-                <button type="button" class="devourButton btn waves-effect waves-light" id="devourBtn" data-id="{{this.id}}" data-devoured="{{devour}}"><i class="fas fa-utensils"></i>  Devour</button> 
+                <button type="button" class="devourButton btn waves-effect waves-light grey" id="devourBtn" data-id="{{this.id}}" data-devoured="{{devour}}"><i class="fas fa-utensils"></i>  Devour</button> 
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -21,7 +21,7 @@
                 {{#each burgers}}
                 {{#if devoured}}
                 <li class="burgerList"></li>{{this.id}} : {{ this.burger_name}}
-                <button type="button" class="deleteButton btn waves-effect waves-light" id="deleteBtn" data-id="{{this.id}}" data-devoured="{{devour}}"><i class="fas fa-trash-alt"></i>  Delete</button> 
+                <button type="button" class="deleteButton btn waves-effect waves-light grey" id="deleteBtn" data-id="{{this.id}}" data-devoured="{{devour}}"><i class="fas fa-trash-alt"></i>  Delete</button> 
                 {{/if}}
                 {{/each}}
             </ul>
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <button id="addButton" class="btn waves-effect waves-light" type="submit" name="action"><i class="fas fa-plus-circle"></i>  Add Burger</button>
+        <button id="addButton" class="btn waves-effect waves-light grey" type="submit" name="action"><i class="fas fa-plus-circle"></i>  Add Burger</button>
     </form>
 
 </div>
