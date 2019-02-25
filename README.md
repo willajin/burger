@@ -8,6 +8,22 @@ This application lets users input the names of burgers to eat - burgers waiting 
 * body-parser
 * mysql
 * express-handlebars
+## User Application Flow
+The main landing page - burgers waiting to be devoured are displayed on the left side, and burgers that have been devoured are displayed on the right side.
+![step_1](/images/1.JPG?raw=true)
+
+Enter a new burger to be added.
+![step_2](/images/2.JPG?raw=true)
+
+Click on the 'Add Burger' button to add the burger to the waiting area.
+![step_3](/images/3.JPG?raw=true)
+
+Click on the 'Devour' button to eat the burger, and the burger will move to the Devoured Burger section.
+![step_4](/images/4.JPG?raw=true)
+
+Click on the 'Delete' button to remove the burger from the Devoured Burgers section.
+![step_5](/images/5.JPG?raw=true)
+
 ## Built With
 * MySQL
 * Node.js
